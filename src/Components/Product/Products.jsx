@@ -5,12 +5,12 @@ import classes from "./Product.module.css";
 import axios from "axios";
 
 function Products() {
-  const [results, seResults] = useState([]);
+  const [results, setResults] = useState([]);
   useEffect(() => {
     axios
       .get(`https://fakestoreapi.com/products`)
       .then((res) => {
-        seResults(res.data);
+        setResults(res.data);
       })
       .catch((err) => {
         console.log("err");

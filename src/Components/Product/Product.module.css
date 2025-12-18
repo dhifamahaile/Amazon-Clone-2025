@@ -6,9 +6,7 @@
   text-decoration: none;
   position: relative;
 }
-.card__container:hover .button {
-  display: block;
-}
+
 .img_container {
   width: 100%;
   object-fit: contain;
@@ -44,8 +42,10 @@
   bottom: 0;
   left: 0;
 }
+.card__container:hover .button {
+  display: block;
+}
 
-/* copy css */
 .products_container {
   max-width: 1200px;
 }
@@ -63,7 +63,7 @@
 .product__flexed h3 {
   padding: 20px 0px;
 }
-.product__flexed button {
+.product__flexed button :hover {
   display: block;
   position: static;
   width: 250px;
