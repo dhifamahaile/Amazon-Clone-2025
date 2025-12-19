@@ -63,18 +63,21 @@
 .product__flexed h3 {
   padding: 20px 0px;
 }
-.product__flexed button :hover {
+.product__flexed .button {
   display: block;
   position: static;
-  width: 250px;
+  width: 150px;
   margin-right: 40px;
 }
 .product__flexed {
-  height: 35vh;
+  height: 50vh;
 }
-.product__flexed img {
+.product__flexed .img_container {
   width: 300px !important;
-  height: auto;
+  max-width: 300px !important; /* Optional: prevent larger images */
+  max-height: none !important; /* Remove height restriction */
+  height: auto !important;
+  object-fit: contain;
 }
 @media screen and (max-width: 768px) {
   .product__flexed {

@@ -14,10 +14,14 @@ function ProductDetail() {
   useEffect(() => {
     setIsLoading(true);
     axios
-      .get(`${ProductUrl}/products/${productId}`)
+      .get(`${ProductUrl}/products`)
       .then((res) => {
         console.log(res.data);
-        setProduct(res.data);
+        let request = res.data.filter((product) => {
+          return product.id == productId;
+        });
+        console.log(request);
+        setProduct(request);
         setIsLoading(false);
       })
       .catch((err) => {
@@ -36,7 +40,7 @@ function ProductDetail() {
               key={product.id}
               product={product}
               flex={true}
-              renderAdd={true}
+              renderDesc={true}
             />
           );
         })
