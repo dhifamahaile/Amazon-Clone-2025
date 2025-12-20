@@ -6,10 +6,9 @@
   text-decoration: none;
   position: relative;
 }
-
-/* .align {
-  align-items: center !important;
-} */
+.card__container:hover .button {
+  display: block;
+}
 .img_container {
   width: 100%;
   object-fit: contain;
@@ -23,7 +22,6 @@
   margin: 100px auto 100px auto;
   gap: 50px;
   justify-content: center;
-  align-items: center;
 }
 
 .card__container h3,
@@ -45,10 +43,8 @@
   bottom: 0;
   left: 0;
 }
-.card__container:hover .button {
-  display: block;
-}
 
+/* copy css */
 .products_container {
   max-width: 1200px;
 }
@@ -66,27 +62,26 @@
 .product__flexed h3 {
   padding: 20px 0px;
 }
-.product__flexed .button {
+.product__flexed button {
   display: block;
   position: static;
-  width: 150px;
+  width: 250px;
   margin-right: 40px;
 }
 .product__flexed {
-  height: 50vh;
+  height: 35vh;
 }
 .product__flexed img {
   width: 300px !important;
   height: auto;
 }
-/* .product__flexed .img_container {
+.img__adjusted {
   width: 300px !important;
-  /* max-width: 300px !important; Optional: prevent larger images */
-/* max-height: none !important; Remove height restriction */
-/* height: auto !important; */
-/* object-fit: contain; */
-/* }  */
-
+  max-width: 300px !important; /* Optional: prevent larger images */
+  max-height: none !important; /* Remove height restriction */
+  height: auto !important;
+  object-fit: contain;
+}
 @media screen and (max-width: 768px) {
   .product__flexed {
     display: flex;

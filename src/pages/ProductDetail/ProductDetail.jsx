@@ -42,6 +42,7 @@ function ProductDetail() {
               flex={true}
               renderAdd={true}
               renderDesc={true}
+              img={true}
             />
           );
         })

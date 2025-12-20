@@ -32,9 +32,8 @@
 .cart__container div:not(.subtotal) {
   height: auto;
 }
-body .cart__container .img_container {
+.cart__container img {
   width: 100px !important;
-  height: auto;
 }
 .cart__container h2,
 .cart__container h3 {

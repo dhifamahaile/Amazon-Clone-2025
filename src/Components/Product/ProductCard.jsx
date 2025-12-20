@@ -6,9 +6,13 @@ import CurrencyFormat from "../CurrencyFormat/CurrencyFormat";
 import { DataContext } from "../DataProvider/DataProvider";
 import { Type } from "../../Utility/action.type";
 
-function ProductCard({ product, flex, renderDesc, renderAdd }) {
+function ProductCard({ product, flex, renderAdd, img }) {
   const { image, title, id, rating, price, description } = product;
+  console.log("product card page", product);
+
   const [state, dispatch] = useContext(DataContext);
+
+  console.log(state);
 
   let addToCart = () => {
     dispatch({
@@ -29,26 +33,30 @@ function ProductCard({ product, flex, renderDesc, renderAdd }) {
         flex ? classes.product__flexed : ""
       }`}
     >
-      <div className={classes.align}>
-        <Link to={`/products/${id}`}>
-          <img src={image} alt="" className={classes.img_container} />
-        </Link>
-        <div>
-          <h3>{title}</h3>
-          {renderDesc && <div style={{ maxWidth: "750px" }}>{description}</div>}
-          <div className={classes.rating}>
-            <Rating value={rating?.rate} precision={0.1} />
-            <small>{rating?.count}</small>
-          </div>
-          <div>
-            <CurrencyFormat amount={price} />
-          </div>
-          {renderAdd && (
-            <button className={classes.button} onClick={addToCart}>
-              add to Cart
-            </button>
-          )}
+      <Link to={`/products/${id}`}>
+        <img
+          src={image}
+          alt=""
+          className={`${classes.img_container}  ${
+            img ? classes.img__adjusted : ""
+          }`}
+        />
+      </Link>
+      <div>
+        <h3>{title}</h3>
+        {flex && <div style={{ maxWidth: "750px" }}>{description}</div>}
+        <div className={classes.rating}>
+          <Rating value={rating?.rate} precision={0.1} />
+          <small>{rating?.count}</small>
         </div>
+        <div>
+          <CurrencyFormat amount={price} />
+        </div>
+        {renderAdd && (
+          <button className={classes.button} onClick={addToCart}>
+            add to Cart
+          </button>
+        )}
       </div>
     </div>
   );

@@ -12,8 +12,9 @@ import LayOut from "../../Components/Layout/LayOut";
 function Cart() {
   const [{ basket, user }, dispatch] = useContext(DataContext);
   const total = basket.reduce((amount, item) => {
-    return amount + item.price * item.amount;
+    return item.price * item.amount + amount;
   }, 0);
+  console.log(basket);
   const increment = (item) => {
     dispatch({
       type: Type.ADD_TO_BASKET,
@@ -26,6 +27,7 @@ function Cart() {
       id,
     });
   };
+
   return (
     <LayOut>
       <section className={classes.container}>
@@ -44,7 +46,6 @@ function Cart() {
                     key={i}
                     product={item}
                     flex={true}
-                    renderDesc={true}
                     renderAdd={false}
                   />
                   <div className={classes.btn_container}>
