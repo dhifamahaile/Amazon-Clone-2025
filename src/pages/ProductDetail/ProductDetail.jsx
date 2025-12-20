@@ -40,6 +40,7 @@ function ProductDetail() {
               key={product.id}
               product={product}
               flex={true}
+              renderAdd={true}
               renderDesc={true}
             />
           );

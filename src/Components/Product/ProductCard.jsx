@@ -6,7 +6,7 @@ import CurrencyFormat from "../CurrencyFormat/CurrencyFormat";
 import { DataContext } from "../DataProvider/DataProvider";
 import { Type } from "../../Utility/action.type";
 
-function ProductCard({ product, flex, renderDesc }) {
+function ProductCard({ product, flex, renderDesc, renderAdd }) {
   const { image, title, id, rating, price, description } = product;
   const [state, dispatch] = useContext(DataContext);
 
@@ -29,22 +29,26 @@ function ProductCard({ product, flex, renderDesc }) {
         flex ? classes.product__flexed : ""
       }`}
     >
-      <Link to={`/products/${id}`}>
-        <img src={image} alt="" className={classes.img_container} />
-      </Link>
-      <div>
-        <h3>{title}</h3>
-        {renderDesc && <div style={{ maxWidth: "750px" }}>{description}</div>}
-        <div className={classes.rating}>
-          <Rating value={rating?.rate} precision={0.1} />
-          <small>{rating?.count}</small>
-        </div>
+      <div className={classes.align}>
+        <Link to={`/products/${id}`}>
+          <img src={image} alt="" className={classes.img_container} />
+        </Link>
         <div>
-          <CurrencyFormat amount={price} />
+          <h3>{title}</h3>
+          {renderDesc && <div style={{ maxWidth: "750px" }}>{description}</div>}
+          <div className={classes.rating}>
+            <Rating value={rating?.rate} precision={0.1} />
+            <small>{rating?.count}</small>
+          </div>
+          <div>
+            <CurrencyFormat amount={price} />
+          </div>
+          {renderAdd && (
+            <button className={classes.button} onClick={addToCart}>
+              add to Cart
+            </button>
+          )}
         </div>
-        <button className={classes.button} onClick={addToCart}>
-          add to Cart
-        </button>
       </div>
     </div>
   );
