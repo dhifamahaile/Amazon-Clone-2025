@@ -52,7 +52,7 @@ function Header() {
                 <option value="">EN</option>
               </select>
             </Link>
-            <Link to="">
+            <Link to="/auth">
               <div>
                 <p>Hello, Sign In</p>
                 <span>Account & Lists</span>
