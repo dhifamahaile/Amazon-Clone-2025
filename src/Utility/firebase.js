@@ -12,7 +12,7 @@ import "firebase/compat/auth";
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_API_KEY,
+  apiKey: "AIzaSyDs0eXMO0oguKEZsefA14pb7PHIV8H1Qbk",
   authDomain: "e-clone-2025-c3570.firebaseapp.com",
   projectId: "e-clone-2025-c3570",
   storageBucket: "e-clone-2025-c3570.firebasestorage.app",
