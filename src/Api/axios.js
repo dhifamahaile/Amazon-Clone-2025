@@ -6,6 +6,9 @@ const axiosInstance = axios.create({
 
   // deployed version of firebase function
   //   baseURL: "https://amazon-backend-9xop.onrender.com",
+
+  // deployed from Github on render.com
+  baseURL: "https://amazone-clone-backend-2025.onrender.com",
 });
 
 export { axiosInstance };
