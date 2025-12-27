@@ -11,12 +11,12 @@ const logger = require("firebase-functions/logger");
 setGlobalOptions({ maxInstances: 10 });
 
 const app = express();
-app.use(cors({ origion: true }));
+app.use(cors({ origin: true }));
 app.use(express.json());
 
 app.get("/", (req, res) => {
   res.status(200).json({
-    message: "Sucssess",
+    message: "Success",
   });
 });
 
