@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  redirect,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Landing from "./pages/Landing/Landing";
 import Auth from "./pages/Auth/Auth";
 import Payment from "./pages/Payment/Payment";
@@ -15,11 +10,13 @@ import ProductDetail from "./pages/ProductDetail/ProductDetail";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import ProtectedRoute from "./Components/ProtectedRoute/ProtectedRoute";
+const stripePromise = loadStripe(
+  "pk_test_51SiDZC6vfVT0wusb8ozoK60eS12HsSXfja0CXs7eR9DLjIz865Pqg1hy8Q4lM4seHtD4YQZaISpRYTN2FBGS2wqF00X8ZWVl4x"
+);
 
-const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY);
 function Routing() {
   return (
-    <Router>
+    <Router basename="/Amazon-Clone-2025">
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/auth" element={<Auth />} />
